@@ -110,73 +110,159 @@
     </div>
 </div>
 
-{{-- Programs Showcase --}}
+{{-- Activity Realization Section --}}
 <div class="bg-gradient-to-br from-teal-50 to-blue-50 py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">Program Unggulan</h2>
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Realisasi Kegiatan</h2>
             <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                Berbagai program yang dirancang untuk mengembangkan potensi pemuda dan memberikan kontribusi positif bagi masyarakat
+                Dokumentasi kegiatan yang telah terlaksana setiap tahunnya
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {{-- Program 1 --}}
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="h-64 relative overflow-hidden">
-                    <img src="{{ asset('images/homepage/program-social.png') }}" alt="Sosial & Pengabdian" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent"></div>
-                </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Sosial & Pengabdian</h3>
-                    <p class="text-gray-600 mb-6">Program bakti sosial, gotong royong, dan kegiatan pengabdian masyarakat untuk membangun kepedulian sosial pemuda</p>
-                    <a href="{{ url('/activities') }}" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800">
-                        Selengkapnya
-                        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
-                </div>
+        {{-- Year Tabs --}}
+        <div class="flex justify-center mb-10 overflow-x-auto">
+            <div class="inline-flex rounded-lg bg-white p-1 shadow-lg">
+                <button onclick="filterYear('2026')" class="year-tab px-6 py-3 rounded-md font-semibold transition-all" data-year="2026">2026</button>
+                <button onclick="filterYear('2025')" class="year-tab px-6 py-3 rounded-md font-semibold transition-all" data-year="2025">2025</button>
+                <button onclick="filterYear('2024')" class="year-tab px-6 py-3 rounded-md font-semibold transition-all" data-year="2024">2024</button>
+                <button onclick="filterYear('2023')" class="year-tab px-6 py-3 rounded-md font-semibold transition-all" data-year="2023">2023</button>
             </div>
+        </div>
 
-            {{-- Program 2 --}}
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="h-64 relative overflow-hidden">
-                    <img src="{{ asset('images/homepage/program-entrepreneur.png') }}" alt="Kewirausahaan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                    <div class="absolute inset-0 bg-gradient-to-t from-teal-900/70 to-transparent"></div>
-                </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Kewirausahaan</h3>
-                    <p class="text-gray-600 mb-6">Pelatihan dan pendampingan wirausaha muda untuk mengembangkan jiwa entrepreneur dan kemandirian ekonomi</p>
-                    <a href="{{ url('/activities') }}" class="inline-flex items-center text-teal-600 font-semibold hover:text-teal-800">
-                        Selengkapnya
-                        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
-                </div>
+        {{-- Activities Grid --}}
+        <div id="activities-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {{-- Activity cards will be displayed here based on selected year --}}
+            <div class="col-span-full text-center py-16">
+                <svg class="mx-auto h-16 w-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <p class="text-gray-500 text-lg">Pilih tahun untuk melihat realisasi kegiatan</p>
             </div>
+        </div>
 
-            {{-- Program 3 --}}
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="h-64 relative overflow-hidden">
-                    <img src="{{ asset('images/homepage/program-creative.png') }}" alt="Kreativitas & Seni" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                    <div class="absolute inset-0 bg-gradient-to-t from-purple-900/70 to-transparent"></div>
-                </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Kreativitas & Seni</h3>
-                    <p class="text-gray-600 mb-6">Wadah pengembangan bakat dan kreativitas melalui seni, budaya, dan berbagai bentuk ekspresi kreatif</p>
-                    <a href="{{ url('/activities') }}" class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-800">
-                        Selengkapnya
-                        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+        <div class="text-center mt-12">
+            <a href="{{ url('/activities') }}" class="inline-flex items-center bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition shadow-lg transform hover:scale-105">
+                Lihat Semua Kegiatan
+                <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+            </a>
         </div>
     </div>
 </div>
+
+<script>
+    let currentYear = null;
+    
+    // Initialize tabs
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set 2024 as default active year
+        filterYear('2024');
+    });
+
+    function filterYear(year) {
+        currentYear = year;
+        
+        // Update tab styling
+        document.querySelectorAll('.year-tab').forEach(tab => {
+            if (tab.dataset.year === year) {
+                tab.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-teal-600', 'text-white');
+                tab.classList.remove('text-gray-700', 'hover:bg-gray-100');
+            } else {
+                tab.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-teal-600', 'text-white');
+                tab.classList.add('text-gray-700', 'hover:bg-gray-100');
+            }
+        });
+
+        // Fetch activities for the selected year
+        fetchActivities(year);
+    }
+
+    function fetchActivities(year) {
+        const container = document.getElementById('activities-container');
+        
+        // Show loading state
+        container.innerHTML = `
+            <div class="col-span-full text-center py-16">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                <p class="mt-4 text-gray-600">Memuat kegiatan...</p>
+            </div>
+        `;
+
+        // Fetch activities from server
+        fetch(`/api/activities?year=${year}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.activities && data.activities.length > 0) {
+                    displayActivities(data.activities);
+                } else {
+                    container.innerHTML = `
+                        <div class="col-span-full text-center py-16 bg-white rounded-2xl">
+                            <svg class="mx-auto h-16 w-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
+                            </svg>
+                            <p class="text-gray-500 text-lg">Belum ada kegiatan pada tahun ${year}</p>
+                        </div>
+                    `;
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching activities:', error);
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-16 bg-white rounded-2xl">
+                        <svg class="mx-auto h-16 w-16 text-red-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <p class="text-gray-500 text-lg">Gagal memuat kegiatan</p>
+                    </div>
+                `;
+            });
+    }
+
+    function displayActivities(activities) {
+        const container = document.getElementById('activities-container');
+        
+        const cardsHTML = activities.map(activity => `
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="h-56 relative overflow-hidden">
+                    ${activity.image 
+                        ? `<img src="${activity.image}" alt="${activity.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">`
+                        : `<div class="w-full h-full bg-gradient-to-br from-blue-400 to-teal-500 flex items-center justify-center">
+                            <svg class="h-20 w-20 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                           </div>`
+                    }
+                </div>
+                <div class="p-6">
+                    ${activity.category 
+                        ? `<span class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">${activity.category}</span>`
+                        : ''
+                    }
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
+                        ${activity.title}
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-4">${activity.description || 'Tidak ada deskripsi'}</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            ${activity.date}
+                        </div>
+                        ${activity.link 
+                            ? `<a href="${activity.link}" class="text-blue-600 hover:text-blue-800 font-semibold text-sm">Detail →</a>`
+                            : ''
+                        }
+                    </div>
+                </div>
+            </div>
+        `).join('');
+        
+        container.innerHTML = cardsHTML;
+    }
+</script>
 
 {{-- Latest News Section --}}
 <div class="bg-white py-20">
@@ -246,25 +332,6 @@
     </div>
 </div>
 
-{{-- Call to Action --}}
-<div class="relative bg-gradient-to-r from-blue-600 via-teal-600 to-purple-600 text-white py-20 overflow-hidden">
-    <div class="absolute inset-0 bg-black opacity-20"></div>
-    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"></div>
-    
-    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl sm:text-5xl font-bold mb-6">Bergabunglah Bersama Kami</h2>
-        <p class="text-xl sm:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto">
-            Mari bersama-sama membangun generasi muda yang berkarakter, kreatif, dan berdampak positif untuk Indonesia
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="{{ url('/about') }}" class="bg-white text-blue-600 px-10 py-4 rounded-lg font-bold hover:bg-blue-50 transition transform hover:scale-105 shadow-xl text-lg">
-                Pelajari Lebih Lanjut
-            </a>
-            <a href="{{ url('/activities') }}" class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-lg font-bold hover:bg-white hover:text-blue-600 transition transform hover:scale-105 shadow-xl text-lg">
-                Lihat Kegiatan Kami
-            </a>
-        </div>
-    </div>
-</div>
+
 
 @endsection

@@ -97,4 +97,31 @@ class PublicController extends Controller
 
         return view('public.documentation', compact('documentation'));
     }
+
+    public function getActivitiesByYear(Request $request)
+    {
+        $year = $request->query('year', date('Y'));
+        
+        $activities = ActivityPlan::where('status', 'approved')
+            ->whereYear('planned_date', $year)
+            ->with('category')
+            ->orderBy('planned_date', 'desc')
+            ->get()
+            ->map(function($activity) {
+                return [
+                    'id' => $activity->id,
+                    'title' => $activity->title,
+                    'description' => $activity->description ?? 'Kegiatan ' . $activity->title,
+                    'date' => $activity->planned_date ? $activity->planned_date->format('d M Y') : '-',
+                    'category' => $activity->category ? $activity->category->name : null,
+                    'image' => $activity->image ? asset('storage/' . $activity->image) : null,
+                    'link' => url('/activities/' . $activity->slug),
+                ];
+            });
+
+        return response()->json([
+            'year' => $year,
+            'activities' => $activities
+        ]);
+    }
 }
