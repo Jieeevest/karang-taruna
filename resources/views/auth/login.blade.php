@@ -48,7 +48,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.7) 0%, rgba(13, 148, 136, 0.7) 100%);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1;
         }
 
@@ -286,12 +286,12 @@
 </head>
 <body>
     <!-- Background -->
-    <?php
+    @php
         // Select random Karang Taruna image (1-8)
-        $randomImage = 'images/homepage/karang-taruna-' . rand(1, 8) . '.jpeg';
-    ?>
+        $randomImage = 'images/homepage/karang-taruna-2.jpeg';
+    @endphp
     <div class="animated-bg">
-        <img src="{{ asset('<?php echo $randomImage; ?>') }}" alt="Karang Taruna PREGAS">
+        <img src="{{ asset($randomImage) }}" alt="Karang Taruna PREGAS">
     </div>
 
     <!-- Login Container -->
@@ -299,11 +299,7 @@
         <div class="glass-card">
             <!-- Header -->
             <div class="login-header">
-                <div class="logo-container">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                </div>
+                <h1>Akses Masuk</h1>
                 <h1>Karang Taruna PREGAS</h1>
                 <p class="subtitle">Persatuan Remaja Gandul Selatan</p>
             </div>

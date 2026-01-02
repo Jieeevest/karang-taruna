@@ -5,17 +5,17 @@
 @section('content')
 
 {{-- Hero Section --}}
-<div class="relative text-white overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ asset('images/homepage/hero-main.png') }}'); background-size: cover; background-position: center;">
+<div class="relative text-white overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset('images/homepage/karang-taruna-2.jpeg') }}'); background-size: cover; background-position: center;">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
         <div class="text-center">
             <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight">
-                MEMBANGUN GENERASI<br>MUDA BERKUALITAS
+                KARANG TARUNA PREGAS
             </h1>
             <p class="text-xl sm:text-2xl mb-4 text-blue-100 max-w-3xl mx-auto">
-                Wadah Pengembangan dan Pemberdayaan Pemuda Indonesia
+                Persatuan Remaja Gandul Selatan
             </p>
             <p class="text-base sm:text-lg mb-10 text-blue-50 max-w-2xl mx-auto">
-                Mari bersama-sama membangun karakter, mengembangkan potensi, dan berkontribusi untuk Indonesia yang lebih baik
+                Mari bersama-sama membangun karakter, mengembangkan potensi, dan berkontribusi untuk masyarakat yang lebih baik
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="{{ url('/about') }}" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition transform hover:scale-105 shadow-lg">
