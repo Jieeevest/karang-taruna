@@ -1,0 +1,93 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use App\Models\{Content, Category};
+use Carbon\Carbon;
+
+class ContentSeeder extends Seeder
+{
+    public function run()
+    {
+        $categories = Category::all();
+        
+        if ($categories->isEmpty()) {
+            $this->command->warn('No categories found. Please run CategorySeeder first.');
+            return;
+        }
+
+        $news = [
+            [
+                'user_id' => 1,
+                'title' => 'Karang Taruna Raih Penghargaan Organisasi Terbaik 2024',
+                'slug' => 'karang-taruna-raih-penghargaan-organisasi-terbaik-2024',
+                'excerpt' => 'Organisasi Karang Taruna berhasil meraih penghargaan sebagai organisasi kepemudaan terbaik tingkat kota dalam ajang penghargaan tahunan.',
+                'body' => '<p>Karang Taruna berhasil meraih penghargaan bergengsi sebagai organisasi kepemudaan terbaik tingkat kota dalam acara penghargaan tahunan yang diselenggarakan oleh Dinas Pemuda dan Olahraga.</p><p>Penghargaan ini diberikan berdasarkan penilaian terhadap kontribusi organisasi dalam pemberdayaan pemuda, kegiatan sosial, dan dampak positif bagi masyarakat.</p><p>"Ini adalah kebanggaan bagi kami semua. Penghargaan ini adalah hasil kerja keras seluruh anggota dan dukungan masyarakat," ujar ketua Karang Taruna.</p>',
+                'type' => 'news',
+                'status' => 'published',
+                'published_at' => Carbon::now()->subDays(5),
+                'category_id' => $categories->random()->id,
+            ],
+            [
+                'user_id' => 1,
+                'title' => 'Sukses Gelar Pelatihan Digital Marketing',
+                'slug' => 'sukses-gelar-pelatihan-digital-marketing',
+                'excerpt' => 'Lebih dari 50 peserta mengikuti pelatihan digital marketing yang diselenggarakan Karang Taruna untuk meningkatkan kemampuan wirausaha muda.',
+                'body' => '<p>Karang Taruna berhasil menyelenggarakan pelatihan digital marketing yang diikuti oleh lebih dari 50 pemuda pengusaha dari berbagai wilayah.</p><p>Pelatihan ini menghadirkan praktisi digital marketing profesional yang memberikan materi tentang strategi pemasaran online, social media marketing, dan penggunaan platform e-commerce.</p><p>Para peserta sangat antusias dan berharap dapat menerapkan ilmu yang didapat untuk mengembangkan usaha mereka.</p>',
+                'type' => 'news',
+                'status' => 'published',
+                'published_at' => Carbon::now()->subDays(12),
+                'category_id' => $categories->random()->id,
+            ],
+            [
+                'user_id' => 1,
+                'title' => 'Bakti Sosial Ramadan: Berbagi kepada Sesama',
+                'slug' => 'bakti-sosial-ramadan-berbagi-kepada-sesama',
+                'excerpt' => 'Karang Taruna mengadakan bakti sosial dengan membagikan 200 paket sembako kepada warga kurang mampu menyambut bulan Ramadan.',
+                'body' => '<p>Dalam rangka menyambut bulan suci Ramadan, Karang Taruna mengadakan kegiatan bakti sosial dengan membagikan 200 paket sembako kepada warga kurang mampu di wilayah sekitar.</p><p>Kegiatan ini merupakan bentuk kepedulian sosial dan berbagi kasih kepada sesama, terutama mereka yang membutuhkan.</p><p>Paket sembako berisi beras, minyak goreng, gula, telur, dan kebutuhan pokok lainnya yang dikumpulkan dari donasi anggota dan masyarakat peduli.</p>',
+                'type' => 'news',
+                'status' => 'published',
+                'published_at' => Carbon::now()->subDays(25),
+                'category_id' => $categories->random()->id,
+            ],
+            [
+                'user_id' => 1,
+                'title' => 'Launching Program Pemuda Kreatif Indonesia',
+                'slug' => 'launching-program-pemuda-kreatif-indonesia',
+                'excerpt' => 'Karang Taruna meluncurkan program baru untuk mendukung kreativitas pemuda di bidang seni, teknologi, dan inovasi.',
+                'body' => '<p>Karang Taruna dengan bangga meluncurkan program "Pemuda Kreatif Indonesia" yang bertujuan untuk mendukung dan mengembangkan kreativitas generasi muda.</p><p>Program ini mencakup berbagai bidang seperti seni dan budaya, teknologi informasi, desain grafis, videografi, dan berbagai bidang kreatif lainnya.</p><p>Peserta program akan mendapatkan mentoring, pelatihan, serta kesempatan untuk mengikuti kompetisi dan pameran karya.</p>',
+                'type' => 'news',
+                'status' => 'published',
+                'published_at' => Carbon::now()->subMonths(1),
+                'category_id' => $categories->random()->id,
+            ],
+            [
+                'user_id' => 1,
+                'title' => 'Kolaborasi dengan Komunitas Peduli Lingkungan',
+                'slug' => 'kolaborasi-dengan-komunitas-peduli-lingkungan',
+                'excerpt' => 'Karang Taruna menjalin kerjasama dengan komunitas peduli lingkungan untuk program penghijauan dan pengurangan sampah plastik.',
+                'body' => '<p>Karang Taruna menjalin kerjasama strategis dengan berbagai komunitas peduli lingkungan untuk program jangka panjang pelestarian alam.</p><p>Program ini meliputi kegiatan penanaman 1000 pohon, kampanye pengurangan sampah plastik, dan edukasi pengelolaan sampah organik.</p><p>Kolaborasi ini diharapkan dapat memberikan dampak positif bagi lingkungan dan meningkatkan kesadaran masyarakat akan pentingnya menjaga kelestarian alam.</p>',
+                'type' => 'news',
+                'status' => 'published',
+                'published_at' => Carbon::now()->subMonths(2),
+                'category_id' => $categories->random()->id,
+            ],
+            [
+                'user_id' => 1,
+                'title' => 'Webinar Kepemimpinan Pemuda di Era Digital',
+                'slug' => 'webinar-kepemimpinan-pemuda-di-era-digital',
+                'excerpt' => 'Ratusan peserta mengikuti webinar tentang kepemimpinan pemuda dan adaptasi di era digital yang diselenggarakan Karang Taruna.',
+                'body' => '<p>Karang Taruna sukses menyelenggarakan webinar bertema "Kepemimpinan Pemuda di Era Digital" yang diikuti oleh ratusan peserta dari seluruh Indonesia.</p><p>Webinar menghadirkan pembicara inspiratif dari berbagai latar belakang yang berbagi pengalaman dan strategi kepemimpinan di era transformasi digital.</p><p>Materi yang disampaikan meliputi digital leadership, personal branding, komunikasi efektif di media sosial, dan membangun jaringan profesional.</p>',
+                'type' => 'news',
+                'status' => 'published',
+                'published_at' => Carbon::now()->subWeeks(3),
+                'category_id' => $categories->random()->id,
+            ],
+        ];
+
+        foreach ($news as $item) {
+            Content::create($item);
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    /* Line clamp for text truncation */
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+@layer base {
+    /* Custom color properties */
+    :root {
+        --color-primary: #00ced1;
+        --color-primary-light: #7fffd4;
+        --color-primary-dark: #008b8b;
+        --color-black: #000000;
+        --color-white: #ffffff;
+    }
+
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Base text color */
+    body {
+        @apply text-black;
+    }
+
+    /* Smooth transitions for interactive elements */
+    a,
+    button {
+        @apply transition-colors duration-200 ease-in-out;
+    }
+}
