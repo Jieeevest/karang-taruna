@@ -1,0 +1,106 @@
+@extends('cms.layouts.app')
+
+@section('title', 'Buat Rencana Kegiatan')
+
+@section('content')
+<div class="max-w-4xl mx-auto">
+    <div class="flex items-center gap-4 mb-6">
+        <a href="{{ route('cms.activity-plans.index') }}" class="p-2 bg-white rounded-lg border border-gray-200 hover:bg-gray-50 transition text-gray-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </a>
+        <div>
+            <h2 class="text-2xl font-bold text-gray-800">Buat Rencana Kegiatan</h2>
+            <p class="text-gray-600 mt-1">Tambahkan rencana kegiatan baru</p>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-sm p-6">
+        <form action="{{ route('cms.activity-plans.store') }}" method="POST">
+            @csrf
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="col-span-2">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Judul Kegiatan</label>
+                    <input type="text" name="title" value="{{ old('title') }}" 
+                        class="w-full rounded-lg border-gray-300 focus:border-teal-500 focus:ring-teal-500 @error('title') border-red-500 @enderror"
+                        placeholder="Contoh: Bakti Sosial Desa 2025" required>
+                    @error('title')
+                        <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Kategori</label>
+                    <select name="category_id" class="w-full rounded-lg border-gray-300 focus:border-teal-500 focus:ring-teal-500 @error('category_id') border-red-500 @enderror" required>
+                        <option value="">Pilih Kategori</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                                {{ $category->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('category_id')
+                        <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Tanggal Pelaksanaan</label>
+                    <input type="date" name="planned_date" value="{{ old('planned_date') }}" 
+                        class="w-full rounded-lg border-gray-300 focus:border-teal-500 focus:ring-teal-500 @error('planned_date') border-red-500 @enderror" required>
+                    @error('planned_date')
+                        <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="col-span-2">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Lokasi</label>
+                    <input type="text" name="location" value="{{ old('location') }}" 
+                        class="w-full rounded-lg border-gray-300 focus:border-teal-500 focus:ring-teal-500 @error('location') border-red-500 @enderror"
+                        placeholder="Lokasi kegiatan" required>
+                    @error('location')
+                        <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Anggaran (Rp)</label>
+                    <input type="number" name="budget" value="{{ old('budget') }}" 
+                        class="w-full rounded-lg border-gray-300 focus:border-teal-500 focus:ring-teal-500 @error('budget') border-red-500 @enderror"
+                        placeholder="0" required min="0">
+                    @error('budget')
+                        <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Deskripsi Kegiatan</label>
+                <textarea name="description" rows="4" 
+                    class="w-full rounded-lg border-gray-300 focus:border-teal-500 focus:ring-teal-500 @error('description') border-red-500 @enderror"
+                    placeholder="Jelaskan detail kegiatan..." required>{{ old('description') }}</textarea>
+                @error('description')
+                    <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Tujuan Kegiatan (Opsional)</label>
+                <textarea name="objectives" rows="3" 
+                    class="w-full rounded-lg border-gray-300 focus:border-teal-500 focus:ring-teal-500 @error('objectives') border-red-500 @enderror"
+                    placeholder="Tujuan yang ingin dicapai...">{{ old('objectives') }}</textarea>
+                @error('objectives')
+                    <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="flex justify-end gap-4 pt-4 border-t border-gray-100">
+                <a href="{{ route('cms.activity-plans.index') }}" class="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition font-medium">Batal</a>
+                <button type="submit" class="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition font-medium">Simpan Rencana</button>
+            </div>
+        </form>
+    </div>
+</div>
+@endsection

@@ -22,5 +22,21 @@ class Documentation extends Model
         'file_name',
         'file_type',
         'file_size',
+
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function activityRealization()
+    {
+        return $this->belongsTo(ActivityRealization::class);
+    }
 }

@@ -29,14 +29,40 @@ Route::get('/documentation', [PublicController::class, 'documentation'])->name('
 // CMS Routes - Protected by auth and role middleware
 Route::prefix('cms')->name('cms.')->middleware(['auth'])->group(function () {
     
-    // Dashboard - Accessible by Ketua, Admin Data, Anggota
+    // Dashboard - Accessible by all authenticated users
     Route::get('/dashboard', [DashboardController::class, 'index'])
         ->middleware('role:ketua,admin-data,anggota')
         ->name('dashboard');
     
-    // Master Data Management Routes will be added here
-    // Activity Management Routes will be added here
-    // Content Management Routes will be added here
+    // Users Management - Ketua and Admin only
+    Route::middleware('role:ketua,admin-data')->group(function () {
+        Route::resource('users', \App\Http\Controllers\CMS\UserController::class);
+    });
+    
+    // Categories Management - Ketua and Admin only
+    Route::middleware('role:ketua,admin-data')->group(function () {
+        Route::resource('categories', \App\Http\Controllers\CMS\CategoryController::class);
+    });
+    
+    // News/Content Management - All roles
+    Route::middleware('role:ketua,admin-data,anggota')->group(function () {
+        Route::resource('news', \App\Http\Controllers\CMS\NewsController::class);
+    });
+    
+    // Activity Plans - All roles  
+    Route::middleware('role:ketua,admin-data,anggota')->group(function () {
+        Route::resource('activity-plans', \App\Http\Controllers\CMS\ActivityPlanController::class);
+    });
+    
+    // Activity Realizations - All roles
+    Route::middleware('role:ketua,admin-data,anggota')->group(function () {
+        Route::resource('activity-realizations', \App\Http\Controllers\CMS\ActivityRealizationController::class);
+    });
+    
+    // Documentation - All roles
+    Route::middleware('role:ketua,admin-data,anggota')->group(function () {
+        Route::resource('documentation', \App\Http\Controllers\CMS\DocumentationController::class);
+    });
 });
 
 // Authentication Routes (Laravel Breeze)
