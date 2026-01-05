@@ -48,7 +48,7 @@ class ActivityRealizationController extends Controller
         ]);
 
         $validated['user_id'] = Auth::id();
-        $validated['status'] = 'draft';
+        $validated['status'] = 'sedang_berjalan';
 
         ActivityRealization::create($validated);
 
@@ -58,6 +58,7 @@ class ActivityRealizationController extends Controller
 
     public function edit(ActivityRealization $activityRealization)
     {
+        $activityRealization->load('documentation');
         return view('cms.activity_realizations.edit', compact('activityRealization'));
     }
 
@@ -71,18 +72,47 @@ class ActivityRealizationController extends Controller
             'report' => 'required|string',
             'achievements' => 'nullable|string',
             'obstacles' => 'nullable|string',
-            'status' => 'required|in:draft,submitted,verified,rejected',
+            'status' => 'required|in:sedang_berjalan,batal,final',
+            'evidence.*' => 'nullable|image|max:5120', // 5MB max per image
         ]);
 
-        if ($validated['status'] === 'verified' && $activityRealization->status !== 'verified') {
+        if ($validated['status'] === 'final' && $activityRealization->status !== 'final') {
             $validated['verified_by'] = Auth::id();
             $validated['verified_at'] = now();
         }
 
         $activityRealization->update($validated);
 
+        // Handle evidence upload
+        if ($request->hasFile('evidence')) {
+            foreach ($request->file('evidence') as $file) {
+                $path = $file->store('documentation/realizations', 'public');
+                
+                \App\Models\Documentation::create([
+                    'user_id' => Auth::id(),
+                    'activity_realization_id' => $activityRealization->id,
+                    'category_id' => $activityRealization->activityPlan->category_id,
+                    'title' => $activityRealization->activityPlan->title . ' - ' . now()->format('d M Y H:i'),
+                    'description' => 'Dokumentasi ' . $activityRealization->activityPlan->title,
+                    'type' => 'photo',
+                    'file_path' => $path,
+                    'file_name' => $file->getClientOriginalName(),
+                    'file_type' => $file->getMimeType(),
+                    'file_size' => $file->getSize(),
+                ]);
+            }
+        }
+
         return redirect()->route('cms.activity-realizations.index')
-            ->with('success', 'Laporan realisasi kegiatan berhasil diperbarui.');
+            ->with('success', 'Laporan realisasi dan dokumentasi berhasil diperbarui.');
+    }
+
+    public function deleteEvidence(\App\Models\Documentation $documentation)
+    {
+        \Storage::disk('public')->delete($documentation->file_path);
+        $documentation->delete();
+        
+        return response()->json(['success' => true]);
     }
 
     public function destroy(ActivityRealization $activityRealization)

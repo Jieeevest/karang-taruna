@@ -51,11 +51,23 @@ Route::prefix('cms')->name('cms.')->middleware(['auth'])->group(function () {
     
     // Activity Plans - All roles  
     Route::middleware('role:ketua,admin-data,anggota')->group(function () {
+        Route::post('activity-plans/{activityPlan}/submit-for-review', [\App\Http\Controllers\CMS\ActivityPlanController::class, 'submitForReview'])
+            ->name('activity-plans.submit-for-review');
         Route::resource('activity-plans', \App\Http\Controllers\CMS\ActivityPlanController::class);
+    });
+
+    // Activity Plans Approval - Ketua only
+    Route::middleware('role:ketua')->group(function () {
+        Route::post('activity-plans/{activityPlan}/approve', [\App\Http\Controllers\CMS\ActivityPlanController::class, 'approve'])
+            ->name('activity-plans.approve');
+        Route::post('activity-plans/{activityPlan}/reject', [\App\Http\Controllers\CMS\ActivityPlanController::class, 'reject'])
+            ->name('activity-plans.reject');
     });
     
     // Activity Realizations - All roles
     Route::middleware('role:ketua,admin-data,anggota')->group(function () {
+        Route::delete('documentation/{documentation}', [\App\Http\Controllers\CMS\ActivityRealizationController::class, 'deleteEvidence'])
+            ->name('documentation.destroy');
         Route::resource('activity-realizations', \App\Http\Controllers\CMS\ActivityRealizationController::class);
     });
     

@@ -59,7 +59,7 @@
                 
                 <!-- Navigation -->
                 <nav class="space-y-2">
-                    <!-- Dashboard -->
+                    <!-- Dashboard - All roles can see -->
                     <a href="{{ route('cms.dashboard') }}" class="flex items-center p-3 text-gray-700 rounded-lg menu-item @if(request()->routeIs('cms.dashboard')) menu-item-active @endif">
                         <svg class="w-5 h-5 mr-4" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
@@ -67,8 +67,8 @@
                         <span class="font-medium">Dashboard</span>
                     </a>
 
-                    <!-- Master Data Section -->
-                    @if(auth()->user()->isKetua() || auth()->user()->isAdmin())
+                    <!-- Master Data Section - Only Ketua -->
+                    @if(auth()->user()->isKetua())
                     <div class="pt-4 pb-2">
                         <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Master Data</p>
                     </div>
@@ -77,20 +77,19 @@
                         <svg class="w-5 h-5 mr-4" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
                         </svg>
-                        <span class="font-medium">Pengguna</span>
+                        <span class="font-medium">Master Anggota</span>
                     </a>
                     
                     <a href="{{ route('cms.categories.index') }}" class="flex items-center p-3 text-gray-700 rounded-lg menu-item @if(request()->routeIs('cms.categories.*')) menu-item-active @endif">
                         <svg class="w-5 h-5 mr-4" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
                         </svg>
-                        <span class="font-medium">Kategori</span>
+                        <span class="font-medium">Master Kategori</span>
                     </a>
-
-
                     @endif
 
-                    <!-- Content Section -->
+                    <!-- Content Section - Ketua & Admin Data -->
+                    @if(auth()->user()->isKetua() || auth()->user()->isAdmin())
                     <div class="pt-4 pb-2">
                         <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Konten</p>
                     </div>
@@ -100,10 +99,12 @@
                             <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"></path>
                             <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
                         </svg>
-                        <span class="font-medium">Berita</span>
+                        <span class="font-medium">Master Konten</span>
                     </a>
+                    @endif
 
-                    <!-- Activities Section -->
+                    <!-- Activities Section - Ketua & Anggota -->
+                    @if(auth()->user()->isKetua() || auth()->user()->isAnggota())
                     <div class="pt-4 pb-2">
                         <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Kegiatan</p>
                     </div>
@@ -121,13 +122,17 @@
                         </svg>
                         <span class="font-medium">Realisasi Kegiatan</span>
                     </a>
+                    @endif
                     
+                    <!-- Documentation - Ketua, Admin Data, & Anggota -->
+                    @if(auth()->user()->isKetua() || auth()->user()->isAdmin() || auth()->user()->isAnggota())
                     <a href="{{ route('cms.documentation.index') }}" class="flex items-center p-3 text-gray-700 rounded-lg menu-item @if(request()->routeIs('cms.documentation.*')) menu-item-active @endif">
                         <svg class="w-5 h-5 mr-4" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
                         </svg>
                         <span class="font-medium">Dokumentasi</span>
                     </a>
+                    @endif
                 </nav>
             </div>
             
@@ -165,5 +170,62 @@
             @yield('content')
         </div>
     </div>
+
+    <!-- Global SweetAlert2 Notifications -->
+    <script>
+        @if(session('success'))
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: '{{ session('success') }}',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                toast: true,
+                position: 'top-end'
+            });
+        @endif
+
+        @if(session('error'))
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal!',
+                text: '{{ session('error') }}',
+                showConfirmButton: true,
+                confirmButtonColor: '#dc2626'
+            });
+        @endif
+
+        @if(session('warning'))
+            Swal.fire({
+                icon: 'warning',
+                title: 'Perhatian!',
+                text: '{{ session('warning') }}',
+                showConfirmButton: true,
+                confirmButtonColor: '#f59e0b'
+            });
+        @endif
+
+        @if(session('info'))
+            Swal.fire({
+                icon: 'info',
+                title: 'Informasi',
+                text: '{{ session('info') }}',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true
+            });
+        @endif
+
+        @if($errors->any())
+            Swal.fire({
+                icon: 'error',
+                title: 'Terjadi Kesalahan!',
+                html: '<ul style="text-align: left;">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>',
+                showConfirmButton: true,
+                confirmButtonColor: '#dc2626'
+            });
+        @endif
+    </script>
 </body>
 </html>

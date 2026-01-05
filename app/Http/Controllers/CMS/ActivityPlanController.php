@@ -87,6 +87,71 @@ class ActivityPlanController extends Controller
             ->with('success', 'Rencana kegiatan berhasil diperbarui.');
     }
 
+    public function submitForReview(ActivityPlan $activityPlan)
+    {
+        // Only allow submission if status is draft
+        if ($activityPlan->status !== 'draft') {
+            return redirect()->route('cms.activity-plans.index')
+                ->with('error', 'Hanya rencana kegiatan dengan status Draft yang dapat diajukan untuk review.');
+        }
+
+        $activityPlan->update(['status' => 'pending_review']);
+
+        return redirect()->route('cms.activity-plans.index')
+            ->with('success', 'Rencana kegiatan berhasil diajukan untuk review.');
+    }
+
+    public function approve(ActivityPlan $activityPlan)
+    {
+        // Validate only pending_review can be approved
+        if ($activityPlan->status !== 'pending_review') {
+            return redirect()->route('cms.activity-plans.index')
+                ->with('error', 'Hanya rencana dengan status Menunggu Review yang dapat disetujui.');
+        }
+        
+        // Update plan status
+        $activityPlan->update([
+            'status' => 'approved',
+            'approved_by' => Auth::id(),
+            'approved_at' => now(),
+        ]);
+        
+        // Auto-create realization
+        \App\Models\ActivityRealization::create([
+            'activity_plan_id' => $activityPlan->id,
+            'user_id' => $activityPlan->user_id,
+            'actual_date' => $activityPlan->planned_date,
+            'actual_location' => $activityPlan->location,
+            'actual_budget' => $activityPlan->budget,
+            'participants_count' => 0,
+            'report' => 'Menunggu pelaksanaan kegiatan',
+            'status' => 'sedang_berjalan',
+        ]);
+        
+        return redirect()->route('cms.activity-plans.index')
+            ->with('success', 'Rencana kegiatan berhasil disetujui dan realisasi telah dibuat.');
+    }
+
+    public function reject(Request $request, ActivityPlan $activityPlan)
+    {
+        $validated = $request->validate([
+            'rejection_reason' => 'required|string|max:500',
+        ]);
+        
+        if ($activityPlan->status !== 'pending_review') {
+            return redirect()->route('cms.activity-plans.index')
+                ->with('error', 'Hanya rencana dengan status Menunggu Review yang dapat ditolak.');
+        }
+        
+        $activityPlan->update([
+            'status' => 'rejected',
+            'rejection_reason' => $validated['rejection_reason'],
+        ]);
+        
+        return redirect()->route('cms.activity-plans.index')
+            ->with('success', 'Rencana kegiatan ditolak.');
+    }
+
     public function destroy(ActivityPlan $activityPlan)
     {
         $activityPlan->delete();

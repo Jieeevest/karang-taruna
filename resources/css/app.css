@@ -37,4 +37,18 @@
     button {
         @apply transition-colors duration-200 ease-in-out;
     }
+
+    /* Gray placeholder text for all inputs */
+    ::placeholder {
+        @apply text-gray-400;
+        opacity: 1;
+    }
+
+    :-ms-input-placeholder {
+        @apply text-gray-400;
+    }
+
+    ::-ms-input-placeholder {
+        @apply text-gray-400;
+    }
 }

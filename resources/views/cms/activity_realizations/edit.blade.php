@@ -3,7 +3,7 @@
 @section('title', 'Edit Laporan Realisasi')
 
 @section('content')
-<div class="max-w-4xl mx-auto">
+<div class="max-w-full mx-auto">
     <div class="flex items-center gap-4 mb-6">
         <a href="{{ route('cms.activity-realizations.index') }}" class="p-2 bg-white rounded-lg border border-gray-200 hover:bg-gray-50 transition text-gray-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -25,7 +25,7 @@
             </p>
         </div>
 
-        <form action="{{ route('cms.activity-realizations.update', $activityRealization) }}" method="POST">
+        <form action="{{ route('cms.activity-realizations.update', $activityRealization) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -108,6 +108,45 @@
                 </div>
             </div>
 
+            <!-- Evidence Upload Section -->
+            <div class="mb-6 p-6 bg-gray-50 rounded-lg border border-gray-300">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Bukti Dokumentasi Kegiatan</h3>
+                
+                <div class="mb-4">
+                    <input type="file" name="evidence[]" id="evidence-upload" multiple accept="image/*" class="hidden">
+                    <button type="button" onclick="document.getElementById('evidence-upload').click()"
+                            class="px-4 py-3 bg-white border-2 border-dashed border-gray-300 rounded-lg hover:bg-gray-50 transition flex items-center gap-2 text-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                        Upload Foto Dokumentasi
+                    </button>
+                    <p class="mt-2 text-sm text-gray-500">Upload multiple gambar (max 5MB per gambar)</p>
+                </div>
+
+                <div id="preview-container" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-4"></div>
+
+                @if(isset($activityRealization) && $activityRealization->documentation && $activityRealization->documentation->count() > 0)
+                <div class="mt-6 pt-6 border-t border-gray-300">
+                    <h4 class="font-medium text-gray-700 mb-3">Dokumentasi Tersimpan ({{ $activityRealization->documentation->count() }})</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        @foreach($activityRealization->documentation as $doc)
+                        <div class="relative group" id="evidence-{{ $doc->id }}">
+                            <img src="{{ asset('storage/' . $doc->file_path) }}" alt="{{ $doc->title }}"
+                                 class="w-full h-32 object-cover rounded-lg border border-gray-300">
+                            <button type="button" onclick="deleteEvidence({{ $doc->id }})" 
+                                    class="absolute top-2 right-2 bg-red-600 text-white p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endif
+            </div>
+
             <div class="flex justify-end gap-4 pt-4 border-t border-gray-100">
                 <a href="{{ route('cms.activity-realizations.index') }}" class="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition font-medium">Batal</a>
                 <button type="submit" class="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition font-medium">Simpan Perubahan</button>
@@ -115,4 +154,41 @@
         </form>
     </div>
 </div>
+
+<script>
+document.getElementById('evidence-upload').addEventListener('change', function(e) {
+    const container = document.getElementById('preview-container');
+    container.innerHTML = '';
+    
+    Array.from(e.target.files).forEach((file) => {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const div = document.createElement('div');
+            div.className = 'relative';
+            div.innerHTML = `
+                <img src="${event.target.result}" class="w-full h-32 object-cover rounded-lg border border-gray-300">
+                <div class="absolute bottom-1 left-1 right-1 bg-black/50 text-white text-xs p-1 rounded truncate">${file.name}</div>
+            `;
+            container.appendChild(div);
+        };
+        reader.readAsDataURL(file);
+    });
+});
+
+function deleteEvidence(id) {
+    if (confirm('Hapus dokumentasi ini?')) {
+        fetch(`/cms/documentation/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                'Accept': 'application/json'
+            }
+        }).then(response => response.json())
+          .then(data => {
+              document.getElementById('evidence-' + id).remove();
+              Swal.fire('Berhasil!', 'Dokumentasi berhasil dihapus.', 'success');
+          });
+    }
+}
+</script>
 @endsection
