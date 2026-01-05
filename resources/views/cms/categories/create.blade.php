@@ -17,7 +17,7 @@
     </div>
 </div>
 
-<div class="max-w-2xl">
+<div class="max-w-full">
     <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
         <form action="{{ route('cms.categories.store') }}" method="POST">
             @csrf

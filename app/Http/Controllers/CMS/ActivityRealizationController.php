@@ -74,6 +74,7 @@ class ActivityRealizationController extends Controller
             'obstacles' => 'nullable|string',
             'status' => 'required|in:sedang_berjalan,batal,final',
             'evidence.*' => 'nullable|image|max:5120', // 5MB max per image
+            'attendance_list' => 'nullable|json',
         ]);
 
         if ($validated['status'] === 'final' && $activityRealization->status !== 'final') {

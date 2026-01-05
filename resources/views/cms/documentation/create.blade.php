@@ -3,7 +3,7 @@
 @section('title', 'Upload Dokumentasi')
 
 @section('content')
-<div class="max-w-4xl mx-auto">
+<div class="max-w-full mx-auto">
     <div class="flex items-center gap-4 mb-6">
         <a href="{{ route('cms.documentation.index') }}" class="p-2 bg-white rounded-lg border border-gray-200 hover:bg-gray-50 transition text-gray-600">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

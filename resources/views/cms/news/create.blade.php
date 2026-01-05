@@ -17,7 +17,7 @@
     </div>
 </div>
 
-<div class="max-w-4xl">
+<div class="max-w-full">
     <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
         <form action="{{ route('cms.news.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
