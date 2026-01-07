@@ -6,7 +6,7 @@
 <!-- Header -->
 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
     <div>
-        <h2 class="text-2xl font-bold text-gray-800">Realisasi Kegiatan</h2>
+        <h1 class="text-3xl font-bold text-gray-900">Realisasi Kegiatan</h1>
         <p class="text-gray-600 mt-1">Laporan pelaksanaan kegiatan</p>
     </div>
     <a href="{{ route('cms.activity-realizations.create') }}" class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition flex items-center">

@@ -3,20 +3,20 @@
 @section('title', 'Dokumentasi')
 
 @section('content')
-<div class="bg-white rounded-xl shadow-sm p-6">
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
-        <div>
-            <h2 class="text-2xl font-bold text-gray-800">Dokumentasi</h2>
-            <p class="text-gray-600 mt-1">Galeri foto dan dokumen kegiatan</p>
-        </div>
-        <a href="{{ route('cms.documentation.create') }}" class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition flex items-center">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
-            </svg>
-            Upload Dokumentasi
-        </a>
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+    <div>
+        <h1 class="text-3xl font-bold text-gray-900">Dokumentasi</h1>
+        <p class="text-gray-600 mt-1">Galeri foto dan dokumen kegiatan</p>
     </div>
+    <a href="{{ route('cms.documentation.create') }}" class="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold rounded-lg hover:from-teal-600 hover:to-teal-700 transition shadow-md hover:shadow-lg transform hover:scale-105">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+        </svg>
+        Upload Dokumentasi
+    </a>
+</div>
 
+<div class="bg-white rounded-xl shadow-sm p-6">
     <!-- Filters -->
     <div class="mb-6 bg-gray-50 p-4 rounded-lg border border-gray-100">
         <form action="{{ route('cms.documentation.index') }}" method="GET" class="flex flex-col sm:flex-row gap-4">
