@@ -19,7 +19,6 @@
                 <div>
                     <label for="title" class="block text-sm font-medium text-gray-700 mb-2">Judul Rapat *</label>
                     <input type="text" name="title" id="title" value="{{ old('title') }}" required
-                        placeholder="Rapat Koordinasi Bulanan"
                         class="w-full border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 @error('title') border-red-500 @enderror">
                     @error('title')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -50,7 +49,6 @@
                 <div>
                     <label for="location" class="block text-sm font-medium text-gray-700 mb-2">Lokasi *</label>
                     <input type="text" name="location" id="location" value="{{ old('location') }}" required
-                        placeholder="Sekretariat Karang Taruna"
                         class="w-full border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 @error('location') border-red-500 @enderror">
                     @error('location')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -61,7 +59,6 @@
                 <div>
                     <label for="agenda" class="block text-sm font-medium text-gray-700 mb-2">Agenda Rapat *</label>
                     <textarea name="agenda" id="agenda" rows="6" required
-                        placeholder="1. Pembukaan&#10;2. Laporan kegiatan bulan lalu&#10;3. Pembahasan rencana kegiatan&#10;4. Penutup"
                         class="w-full border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 @error('agenda') border-red-500 @enderror">{{ old('agenda') }}</textarea>
                     @error('agenda')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -72,7 +69,6 @@
                 <div>
                     <label for="notes" class="block text-sm font-medium text-gray-700 mb-2">Catatan</label>
                     <textarea name="notes" id="notes" rows="3"
-                        placeholder="Catatan tambahan atau hasil rapat (opsional)..."
                         class="w-full border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 @error('notes') border-red-500 @enderror">{{ old('notes') }}</textarea>
                     @error('notes')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>

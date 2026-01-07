@@ -45,7 +45,6 @@
                 <div>
                     <label for="category" class="block text-sm font-medium text-gray-700 mb-2">Kategori *</label>
                     <input type="text" name="category" id="category" value="{{ old('category', $financialTransaction->category) }}" required
-                        placeholder="Contoh: Donasi, Operasional, Kegiatan, dll"
                         class="w-full border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 @error('category') border-red-500 @enderror">
                     @error('category')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -56,7 +55,6 @@
                 <div>
                     <label for="amount" class="block text-sm font-medium text-gray-700 mb-2">Jumlah (Rp) *</label>
                     <input type="number" name="amount" id="amount" value="{{ old('amount', $financialTransaction->amount) }}" required min="0" step="0.01"
-                        placeholder="0"
                         class="w-full border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 @error('amount') border-red-500 @enderror">
                     @error('amount')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -68,7 +66,6 @@
             <div class="mb-6">
                 <label for="description" class="block text-sm font-medium text-gray-700 mb-2">Deskripsi *</label>
                 <textarea name="description" id="description" rows="5" required
-                    placeholder="Jelaskan detail transaksi..."
                     class="w-full border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 @error('description') border-red-500 @enderror">{{ old('description', $financialTransaction->description) }}</textarea>
                 @error('description')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -79,7 +76,6 @@
             <div class="mb-6">
                 <label for="notes" class="block text-sm font-medium text-gray-700 mb-2">Catatan Tambahan</label>
                 <textarea name="notes" id="notes" rows="3"
-                    placeholder="Catatan tambahan (opsional)..."
                     class="w-full border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 @error('notes') border-red-500 @enderror">{{ old('notes', $financialTransaction->notes) }}</textarea>
                 @error('notes')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
