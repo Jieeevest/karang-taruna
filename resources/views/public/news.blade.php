@@ -5,8 +5,8 @@
 @section('content')
 
 {{-- Hero Section --}}
-<div class="relative text-white py-20 overflow-hidden" style="background: linear-gradient(to right, rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)), url('{{ asset('images/homepage/hero-news.png') }}'); background-size: cover; background-position: center;">
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="relative text-white overflow-hidden flex items-center justify-center" style="min-height: 320px; background: linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('{{ asset('images/homepage/hero-news.png') }}'); background-size: cover; background-position: center;">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16">
         <h1 class="text-4xl sm:text-5xl font-bold mb-4">Berita & Informasi</h1>
         <p class="text-xl text-blue-100">Update terkini seputar Karang Taruna</p>
     </div>
