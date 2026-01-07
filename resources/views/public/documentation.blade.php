@@ -37,11 +37,11 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="absolute bottom-0 left-0 right-0 p-4">
                             <h3 class="text-white font-semibold text-sm mb-1">{{ $doc->title }}</h3>
-                            @if($doc->activity)
-                                <p class="text-white/80 text-xs">{{ $doc->activity->title }}</p>
+                            @if($doc->activityRealization)
+                                <p class="text-white/80 text-xs">{{ $doc->activityRealization->title }}</p>
                             @endif
-                            @if($doc->event_date)
-                                <p class="text-white/60 text-xs mt-1">{{ $doc->event_date->format('d M Y') }}</p>
+                            @if($doc->created_at)
+                                <p class="text-white/60 text-xs mt-1">{{ $doc->created_at->format('d M Y') }}</p>
                             @endif
                         </div>
                     </div>

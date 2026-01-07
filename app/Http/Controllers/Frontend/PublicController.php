@@ -86,14 +86,14 @@ class PublicController extends Controller
 
     public function documentation(Request $request)
     {
-        $query = Documentation::query()->with('activity');
+        $query = Documentation::query()->with('activityRealization');
 
         // Filter by activity
         if ($request->has('activity')) {
-            $query->where('activity_id', $request->activity);
+            $query->where('activity_realization_id', $request->activity);
         }
 
-        $documentation = $query->latest('event_date')->paginate(24);
+        $documentation = $query->latest('created_at')->paginate(24);
 
         return view('public.documentation', compact('documentation'));
     }

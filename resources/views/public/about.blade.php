@@ -18,14 +18,12 @@
 
     
     {{-- Content Container --}}
-    <div class="relative z-20 w-full px-8 md:px-20 lg:px-[120px] pt-20 pb-20" style="padding: 80px 120px;">
+    <div class="relative z-20 w-full px-4 sm:px-8 md:px-20 lg:px-[120px] py-12 sm:py-16 md:py-20">
         <div class="max-w-7xl">
             {{-- Main Title with Gradient --}}
-            <h1 class="text-5xl md:text-6xl lg:text-[64px] font-bold uppercase mb-10 leading-tight" 
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold uppercase mb-6 sm:mb-8 md:mb-10 leading-tight" 
                 style="font-family: 'Plus Jakarta Sans', sans-serif; 
                        font-weight: 700; 
-                       font-size: 64px; 
-                       line-height: 81px;
                        background: linear-gradient(90deg, #55BDC0 0%, rgba(85, 189, 192, 0) 100%), #F5F9FA;
                        -webkit-background-clip: text;
                        -webkit-text-fill-color: transparent;
@@ -34,7 +32,7 @@
             </h1>
             
             {{-- Contact Info Grid --}}
-            <div class="grid md:grid-cols-4 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4">
                 {{-- Location --}}
                 <div class="space-y-4">
                     <h3 class="text-white font-semibold text-sm">Lokasi Sekretariat</h3>
