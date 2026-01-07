@@ -71,9 +71,22 @@ Route::prefix('cms')->name('cms.')->middleware(['auth'])->group(function () {
         Route::resource('activity-realizations', \App\Http\Controllers\CMS\ActivityRealizationController::class);
     });
     
+    
     // Documentation - All roles
     Route::middleware('role:ketua,admin-data,anggota')->group(function () {
         Route::resource('documentation', \App\Http\Controllers\CMS\DocumentationController::class);
+    });
+
+    // Financial Transactions - All roles
+    Route::middleware('role:ketua,admin-data,anggota')->group(function () {
+        Route::resource('financial-transactions', \App\Http\Controllers\CMS\FinancialTransactionController::class);
+    });
+
+    // Meetings - All roles
+    Route::middleware('role:ketua,admin-data,anggota')->group(function () {
+        Route::post('meetings/{meeting}/complete', [\App\Http\Controllers\CMS\MeetingController::class, 'complete'])
+            ->name('meetings.complete');
+        Route::resource('meetings', \App\Http\Controllers\CMS\MeetingController::class);
     });
 });
 
