@@ -47,7 +47,7 @@
                     </div>
                     <div class="flex items-center">
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="text-sm text-black hover:text-primary mr-4">Dashboard</a>
+                            <a href="{{ url('/cms/dashboard') }}" class="text-sm text-black hover:text-primary mr-4">Dashboard</a>
                         @else
                             <a href="{{ route('login') }}" class="text-sm text-black hover:text-primary mr-4">Login</a>
                         @endauth
