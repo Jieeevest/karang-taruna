@@ -23,8 +23,8 @@
                 <div class="flex justify-between h-16">
                     <div class="flex">
                         <div class="flex-shrink-0 flex items-center">
-                            <a href="{{ url('/') }}" class="text-xl font-bold text-black hover:text-primary">
-                                Karang Taruna
+                            <a href="{{ url('/') }}" class="flex items-center">
+                                <img src="{{ asset('images/homepage/logo-pregas.jpeg') }}" alt="Karang Taruna PREGAS" class="h-12 w-auto">
                             </a>
                         </div>
                         <div class="hidden sm:ml-8 sm:flex sm:space-x-8">
@@ -66,9 +66,11 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
-                        <h3 class="text-lg font-semibold mb-4">Karang Taruna</h3>
+                        <div class="mb-4">
+                            <img src="{{ asset('images/homepage/logo-pregas.jpeg') }}" alt="Karang Taruna PREGAS" class="h-16 w-auto mb-3">
+                        </div>
                         <p class="text-white text-sm">
-                            Organisasi kepemudaan di Indonesia yang mewadahi generasi muda untuk berpartisipasi dalam pembangunan.
+                            Berdiri sejak 26 Agustus 1987, Karang Taruna PREGAS (Persatuan Remaja Gandul Selatan) adalah wadah kreativitas pemuda yang bergerak dalam kegiatan sosial dan pelestarian lingkungan untuk memberikan dampak positif bagi Wilayah Kelurahan Gandul.
                         </p>
                     </div>
                     <div>
@@ -83,8 +85,9 @@
                     <div>
                         <h3 class="text-lg font-semibold mb-4">Kontak</h3>
                         <p class="text-white text-sm">
-                            Email: info@karangtaruna.id<br>
-                            Telp: (021) 1234-5678
+                            Email: karangtarunapregas87@gmail.com<br>
+                            Email: katarpregas@gmail.com<br>
+                            Telp: 021 1234-5678
                         </p>
                     </div>
                 </div>
