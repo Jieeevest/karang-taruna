@@ -159,7 +159,7 @@
         </script>
 
         <!-- Action Buttons -->
-        <div class="flex justify-end gap-6 mt-8 pt-6 border-t border-gray-200">
+        <div class="flex justify-end gap-4 mt-8 pt-6 border-t border-gray-200">
             <a href="{{ route('cms.documents.index') }}" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
                 Batal
             </a>
