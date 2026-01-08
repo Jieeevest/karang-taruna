@@ -88,6 +88,13 @@ Route::prefix('cms')->name('cms.')->middleware(['auth'])->group(function () {
             ->name('meetings.complete');
         Route::resource('meetings', \App\Http\Controllers\CMS\MeetingController::class);
     });
+
+    // Documents Repository - All roles
+    Route::middleware('role:ketua,admin-data,anggota')->group(function () {
+        Route::get('documents/{document}/download', [\App\Http\Controllers\CMS\DocumentController::class, 'download'])
+            ->name('documents.download');
+        Route::resource('documents', \App\Http\Controllers\CMS\DocumentController::class);
+    });
 });
 
 // Authentication Routes (Laravel Breeze)

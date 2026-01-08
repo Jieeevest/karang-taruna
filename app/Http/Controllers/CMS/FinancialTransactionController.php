@@ -26,11 +26,11 @@ class FinancialTransactionController extends Controller
 
         // Filter by date range
         if ($request->has('date_from') && $request->date_from !== '') {
-            $query->whereDate('transaction_date', '>=', $request->date_from);
+            $query->where('transaction_date', '>=', $request->date_from);
         }
 
         if ($request->has('date_to') && $request->date_to !== '') {
-            $query->whereDate('transaction_date', '<=', $request->date_to);
+            $query->where('transaction_date', '<=', $request->date_to . ' 23:59:59');
         }
 
         // Search
