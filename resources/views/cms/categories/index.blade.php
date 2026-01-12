@@ -56,9 +56,18 @@
                     <h3 class="text-xl font-bold text-gray-900 mb-1 group-hover:text-teal-600 transition">
                         {{ $category->name }}
                     </h3>
-                    <p class="text-xs text-gray-500 font-mono bg-gray-50 px-2 py-1 rounded inline-block">
-                        {{ $category->slug }}
-                    </p>
+                    <div class="flex items-center space-x-2">
+                        <p class="text-xs text-gray-500 font-mono bg-gray-50 px-2 py-1 rounded inline-block">
+                            {{ $category->slug }}
+                        </p>
+                        @if($category->type == 'activity')
+                            <span class="text-xs font-semibold px-2 py-1 bg-blue-100 text-blue-800 rounded">Kegiatan</span>
+                        @elseif($category->type == 'document')
+                            <span class="text-xs font-semibold px-2 py-1 bg-purple-100 text-purple-800 rounded">Dokumentasi</span>
+                        @elseif($category->type == 'content')
+                            <span class="text-xs font-semibold px-2 py-1 bg-green-100 text-green-800 rounded">Konten</span>
+                        @endif
+                    </div>
                 </div>
                 <div class="flex items-center space-x-2">
                     <a href="{{ route('cms.categories.edit', $category) }}" 

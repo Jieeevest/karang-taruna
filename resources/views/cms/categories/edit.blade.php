@@ -38,6 +38,25 @@
                 <p class="mt-1 text-xs text-gray-500">Slug saat ini: <span class="font-mono">{{ $category->slug }}</span></p>
             </div>
 
+            {{-- Type --}}
+            <div class="mb-6">
+                <label for="type" class="block text-sm font-medium text-gray-700 mb-2">
+                    Jenis Kategori <span class="text-red-500">*</span>
+                </label>
+                <select name="type" id="type"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition @error('type') border-red-500 @enderror"
+                    required>
+                    <option value="">Pilih jenis kategori</option>
+                    <option value="activity" {{ old('type', $category->type) == 'activity' ? 'selected' : '' }}>Kegiatan (Activity)</option>
+                    <option value="document" {{ old('type', $category->type) == 'document' ? 'selected' : '' }}>Dokumentasi (Document)</option>
+                    <option value="content" {{ old('type', $category->type) == 'content' ? 'selected' : '' }}>Konten (Content)</option>
+                </select>
+                @error('type')
+                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                @enderror
+                <p class="mt-1 text-xs text-gray-500">Tentukan di mana kategori ini akan digunakan</p>
+            </div>
+
             {{-- Description --}}
             <div class="mb-6">
                 <label for="description" class="block text-sm font-medium text-gray-700 mb-2">
