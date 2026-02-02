@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 00ToPEGftxqKbdO8wbpZjlmNqhEPkZAtIKGSuUd8Ui4dNboOXffNDkKUhdVRTAz
+\restrict cP9Cg078kymPc1SUprsrJEbQtXbwLLA4IRG62yZ0juYiMiGQP56cvMXz9JJu7aG
 
 -- Dumped from database version 16.11 (Debian 16.11-1.pgdg13+1)
 -- Dumped by pg_dump version 16.11 (Debian 16.11-1.pgdg13+1)
@@ -23,7 +23,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: activity_plans; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: activity_plans; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.activity_plans (
@@ -46,10 +46,8 @@ CREATE TABLE public.activity_plans (
 );
 
 
-ALTER TABLE public.activity_plans OWNER TO karang_user;
-
 --
--- Name: activity_plans_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: activity_plans_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.activity_plans_id_seq
@@ -60,17 +58,15 @@ CREATE SEQUENCE public.activity_plans_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.activity_plans_id_seq OWNER TO karang_user;
-
 --
--- Name: activity_plans_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: activity_plans_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.activity_plans_id_seq OWNED BY public.activity_plans.id;
 
 
 --
--- Name: activity_realizations; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: activity_realizations; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.activity_realizations (
@@ -94,10 +90,8 @@ CREATE TABLE public.activity_realizations (
 );
 
 
-ALTER TABLE public.activity_realizations OWNER TO karang_user;
-
 --
--- Name: activity_realizations_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: activity_realizations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.activity_realizations_id_seq
@@ -108,17 +102,15 @@ CREATE SEQUENCE public.activity_realizations_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.activity_realizations_id_seq OWNER TO karang_user;
-
 --
--- Name: activity_realizations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: activity_realizations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.activity_realizations_id_seq OWNED BY public.activity_realizations.id;
 
 
 --
--- Name: categories; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: categories; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.categories (
@@ -133,10 +125,8 @@ CREATE TABLE public.categories (
 );
 
 
-ALTER TABLE public.categories OWNER TO karang_user;
-
 --
--- Name: categories_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: categories_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.categories_id_seq
@@ -147,17 +137,15 @@ CREATE SEQUENCE public.categories_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.categories_id_seq OWNER TO karang_user;
-
 --
--- Name: categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.categories_id_seq OWNED BY public.categories.id;
 
 
 --
--- Name: contents; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: contents; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.contents (
@@ -183,10 +171,8 @@ CREATE TABLE public.contents (
 );
 
 
-ALTER TABLE public.contents OWNER TO karang_user;
-
 --
--- Name: contents_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: contents_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.contents_id_seq
@@ -197,17 +183,15 @@ CREATE SEQUENCE public.contents_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.contents_id_seq OWNER TO karang_user;
-
 --
--- Name: contents_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: contents_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.contents_id_seq OWNED BY public.contents.id;
 
 
 --
--- Name: documentation_library; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: documentation_library; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.documentation_library (
@@ -228,10 +212,8 @@ CREATE TABLE public.documentation_library (
 );
 
 
-ALTER TABLE public.documentation_library OWNER TO karang_user;
-
 --
--- Name: documentation_library_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: documentation_library_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.documentation_library_id_seq
@@ -242,17 +224,15 @@ CREATE SEQUENCE public.documentation_library_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.documentation_library_id_seq OWNER TO karang_user;
-
 --
--- Name: documentation_library_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: documentation_library_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.documentation_library_id_seq OWNED BY public.documentation_library.id;
 
 
 --
--- Name: documents; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: documents; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.documents (
@@ -269,10 +249,8 @@ CREATE TABLE public.documents (
 );
 
 
-ALTER TABLE public.documents OWNER TO karang_user;
-
 --
--- Name: documents_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: documents_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.documents_id_seq
@@ -283,17 +261,15 @@ CREATE SEQUENCE public.documents_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.documents_id_seq OWNER TO karang_user;
-
 --
--- Name: documents_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: documents_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.documents_id_seq OWNED BY public.documents.id;
 
 
 --
--- Name: failed_jobs; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: failed_jobs; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.failed_jobs (
@@ -307,10 +283,8 @@ CREATE TABLE public.failed_jobs (
 );
 
 
-ALTER TABLE public.failed_jobs OWNER TO karang_user;
-
 --
--- Name: failed_jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: failed_jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.failed_jobs_id_seq
@@ -321,17 +295,15 @@ CREATE SEQUENCE public.failed_jobs_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.failed_jobs_id_seq OWNER TO karang_user;
-
 --
--- Name: failed_jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: failed_jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.failed_jobs_id_seq OWNED BY public.failed_jobs.id;
 
 
 --
--- Name: financial_transactions; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: financial_transactions; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.financial_transactions (
@@ -350,10 +322,8 @@ CREATE TABLE public.financial_transactions (
 );
 
 
-ALTER TABLE public.financial_transactions OWNER TO karang_user;
-
 --
--- Name: financial_transactions_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: financial_transactions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.financial_transactions_id_seq
@@ -364,17 +334,15 @@ CREATE SEQUENCE public.financial_transactions_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.financial_transactions_id_seq OWNER TO karang_user;
-
 --
--- Name: financial_transactions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: financial_transactions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.financial_transactions_id_seq OWNED BY public.financial_transactions.id;
 
 
 --
--- Name: meetings; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: meetings; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.meetings (
@@ -393,10 +361,8 @@ CREATE TABLE public.meetings (
 );
 
 
-ALTER TABLE public.meetings OWNER TO karang_user;
-
 --
--- Name: meetings_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: meetings_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.meetings_id_seq
@@ -407,17 +373,15 @@ CREATE SEQUENCE public.meetings_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.meetings_id_seq OWNER TO karang_user;
-
 --
--- Name: meetings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: meetings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.meetings_id_seq OWNED BY public.meetings.id;
 
 
 --
--- Name: migrations; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: migrations; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.migrations (
@@ -427,10 +391,8 @@ CREATE TABLE public.migrations (
 );
 
 
-ALTER TABLE public.migrations OWNER TO karang_user;
-
 --
--- Name: migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.migrations_id_seq
@@ -442,17 +404,15 @@ CREATE SEQUENCE public.migrations_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.migrations_id_seq OWNER TO karang_user;
-
 --
--- Name: migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.migrations_id_seq OWNED BY public.migrations.id;
 
 
 --
--- Name: organization_profiles; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: organization_profiles; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.organization_profiles (
@@ -473,10 +433,8 @@ CREATE TABLE public.organization_profiles (
 );
 
 
-ALTER TABLE public.organization_profiles OWNER TO karang_user;
-
 --
--- Name: organization_profiles_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: organization_profiles_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.organization_profiles_id_seq
@@ -487,17 +445,15 @@ CREATE SEQUENCE public.organization_profiles_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.organization_profiles_id_seq OWNER TO karang_user;
-
 --
--- Name: organization_profiles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: organization_profiles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.organization_profiles_id_seq OWNED BY public.organization_profiles.id;
 
 
 --
--- Name: password_resets; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: password_resets; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.password_resets (
@@ -507,10 +463,8 @@ CREATE TABLE public.password_resets (
 );
 
 
-ALTER TABLE public.password_resets OWNER TO karang_user;
-
 --
--- Name: personal_access_tokens; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: personal_access_tokens; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.personal_access_tokens (
@@ -526,10 +480,8 @@ CREATE TABLE public.personal_access_tokens (
 );
 
 
-ALTER TABLE public.personal_access_tokens OWNER TO karang_user;
-
 --
--- Name: personal_access_tokens_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: personal_access_tokens_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.personal_access_tokens_id_seq
@@ -540,17 +492,15 @@ CREATE SEQUENCE public.personal_access_tokens_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.personal_access_tokens_id_seq OWNER TO karang_user;
-
 --
--- Name: personal_access_tokens_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: personal_access_tokens_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.personal_access_tokens_id_seq OWNED BY public.personal_access_tokens.id;
 
 
 --
--- Name: roles; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: roles; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.roles (
@@ -563,10 +513,8 @@ CREATE TABLE public.roles (
 );
 
 
-ALTER TABLE public.roles OWNER TO karang_user;
-
 --
--- Name: roles_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: roles_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.roles_id_seq
@@ -577,17 +525,15 @@ CREATE SEQUENCE public.roles_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.roles_id_seq OWNER TO karang_user;
-
 --
--- Name: roles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: roles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.roles_id_seq OWNED BY public.roles.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: karang_user
+-- Name: users; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.users (
@@ -606,10 +552,8 @@ CREATE TABLE public.users (
 );
 
 
-ALTER TABLE public.users OWNER TO karang_user;
-
 --
--- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: karang_user
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.users_id_seq
@@ -620,115 +564,113 @@ CREATE SEQUENCE public.users_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.users_id_seq OWNER TO karang_user;
-
 --
--- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: karang_user
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- Name: activity_plans id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: activity_plans id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.activity_plans ALTER COLUMN id SET DEFAULT nextval('public.activity_plans_id_seq'::regclass);
 
 
 --
--- Name: activity_realizations id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: activity_realizations id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.activity_realizations ALTER COLUMN id SET DEFAULT nextval('public.activity_realizations_id_seq'::regclass);
 
 
 --
--- Name: categories id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: categories id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.categories ALTER COLUMN id SET DEFAULT nextval('public.categories_id_seq'::regclass);
 
 
 --
--- Name: contents id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: contents id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.contents ALTER COLUMN id SET DEFAULT nextval('public.contents_id_seq'::regclass);
 
 
 --
--- Name: documentation_library id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: documentation_library id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.documentation_library ALTER COLUMN id SET DEFAULT nextval('public.documentation_library_id_seq'::regclass);
 
 
 --
--- Name: documents id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: documents id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.documents ALTER COLUMN id SET DEFAULT nextval('public.documents_id_seq'::regclass);
 
 
 --
--- Name: failed_jobs id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: failed_jobs id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.failed_jobs ALTER COLUMN id SET DEFAULT nextval('public.failed_jobs_id_seq'::regclass);
 
 
 --
--- Name: financial_transactions id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: financial_transactions id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.financial_transactions ALTER COLUMN id SET DEFAULT nextval('public.financial_transactions_id_seq'::regclass);
 
 
 --
--- Name: meetings id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: meetings id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.meetings ALTER COLUMN id SET DEFAULT nextval('public.meetings_id_seq'::regclass);
 
 
 --
--- Name: migrations id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: migrations id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.migrations ALTER COLUMN id SET DEFAULT nextval('public.migrations_id_seq'::regclass);
 
 
 --
--- Name: organization_profiles id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: organization_profiles id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.organization_profiles ALTER COLUMN id SET DEFAULT nextval('public.organization_profiles_id_seq'::regclass);
 
 
 --
--- Name: personal_access_tokens id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: personal_access_tokens id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.personal_access_tokens ALTER COLUMN id SET DEFAULT nextval('public.personal_access_tokens_id_seq'::regclass);
 
 
 --
--- Name: roles id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: roles id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.roles ALTER COLUMN id SET DEFAULT nextval('public.roles_id_seq'::regclass);
 
 
 --
--- Name: users id; Type: DEFAULT; Schema: public; Owner: karang_user
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
 
 
 --
--- Data for Name: activity_plans; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: activity_plans; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.activity_plans (id, user_id, category_id, title, description, objectives, planned_date, location, budget, approved_by, approved_at, rejection_reason, created_at, updated_at, status) FROM stdin;
@@ -740,7 +682,7 @@ COPY public.activity_plans (id, user_id, category_id, title, description, object
 
 
 --
--- Data for Name: activity_realizations; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: activity_realizations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.activity_realizations (id, activity_plan_id, user_id, actual_date, actual_location, participants_count, attendance_list, report, achievements, obstacles, actual_budget, verified_by, verified_at, created_at, updated_at, status) FROM stdin;
@@ -749,7 +691,7 @@ COPY public.activity_realizations (id, activity_plan_id, user_id, actual_date, a
 
 
 --
--- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.categories (id, name, slug, type, description, created_at, updated_at) FROM stdin;
@@ -768,7 +710,7 @@ COPY public.categories (id, name, slug, type, description, created_at, updated_a
 
 
 --
--- Data for Name: contents; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: contents; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.contents (id, user_id, category_id, title, slug, excerpt, body, featured_image, type, status, published_at, meta_title, meta_description, meta_keywords, views_count, created_at, updated_at) FROM stdin;
@@ -779,7 +721,7 @@ COPY public.contents (id, user_id, category_id, title, slug, excerpt, body, feat
 
 
 --
--- Data for Name: documentation_library; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: documentation_library; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.documentation_library (id, user_id, category_id, activity_realization_id, title, description, type, file_path, file_name, file_type, file_size, created_at, updated_at) FROM stdin;
@@ -795,7 +737,7 @@ COPY public.documentation_library (id, user_id, category_id, activity_realizatio
 
 
 --
--- Data for Name: documents; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: documents; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.documents (id, user_id, title, description, file_name, file_path, file_size, file_type, created_at, updated_at) FROM stdin;
@@ -806,7 +748,7 @@ COPY public.documents (id, user_id, title, description, file_name, file_path, fi
 
 
 --
--- Data for Name: failed_jobs; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: failed_jobs; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.failed_jobs (id, uuid, connection, queue, payload, exception, failed_at) FROM stdin;
@@ -814,7 +756,7 @@ COPY public.failed_jobs (id, uuid, connection, queue, payload, exception, failed
 
 
 --
--- Data for Name: financial_transactions; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: financial_transactions; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.financial_transactions (id, user_id, transaction_date, type, category, amount, description, notes, evidence_file, created_at, updated_at) FROM stdin;
@@ -825,7 +767,7 @@ COPY public.financial_transactions (id, user_id, transaction_date, type, categor
 
 
 --
--- Data for Name: meetings; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: meetings; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.meetings (id, user_id, title, meeting_date, meeting_time, location, agenda, notes, status, created_at, updated_at) FROM stdin;
@@ -834,7 +776,7 @@ COPY public.meetings (id, user_id, title, meeting_date, meeting_time, location, 
 
 
 --
--- Data for Name: migrations; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: migrations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.migrations (id, migration, batch) FROM stdin;
@@ -859,7 +801,7 @@ COPY public.migrations (id, migration, batch) FROM stdin;
 
 
 --
--- Data for Name: organization_profiles; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: organization_profiles; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.organization_profiles (id, organization_name, about, vision, mission, history, structure, logo, address, phone, email, social_media, created_at, updated_at) FROM stdin;
@@ -868,7 +810,7 @@ COPY public.organization_profiles (id, organization_name, about, vision, mission
 
 
 --
--- Data for Name: password_resets; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: password_resets; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.password_resets (email, token, created_at) FROM stdin;
@@ -876,7 +818,7 @@ COPY public.password_resets (email, token, created_at) FROM stdin;
 
 
 --
--- Data for Name: personal_access_tokens; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: personal_access_tokens; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.personal_access_tokens (id, tokenable_type, tokenable_id, name, token, abilities, last_used_at, created_at, updated_at) FROM stdin;
@@ -884,7 +826,7 @@ COPY public.personal_access_tokens (id, tokenable_type, tokenable_id, name, toke
 
 
 --
--- Data for Name: roles; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: roles; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.roles (id, name, slug, description, created_at, updated_at) FROM stdin;
@@ -896,7 +838,7 @@ COPY public.roles (id, name, slug, description, created_at, updated_at) FROM std
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: karang_user
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.users (id, name, email, email_verified_at, password, remember_token, created_at, updated_at, role_id, phone, address, is_active) FROM stdin;
@@ -912,105 +854,105 @@ COPY public.users (id, name, email, email_verified_at, password, remember_token,
 
 
 --
--- Name: activity_plans_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: activity_plans_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.activity_plans_id_seq', 6, true);
 
 
 --
--- Name: activity_realizations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: activity_realizations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.activity_realizations_id_seq', 1, true);
 
 
 --
--- Name: categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.categories_id_seq', 15, true);
 
 
 --
--- Name: contents_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: contents_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.contents_id_seq', 12, true);
 
 
 --
--- Name: documentation_library_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: documentation_library_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.documentation_library_id_seq', 8, true);
 
 
 --
--- Name: documents_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: documents_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.documents_id_seq', 6, true);
 
 
 --
--- Name: failed_jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: failed_jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.failed_jobs_id_seq', 1, false);
 
 
 --
--- Name: financial_transactions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: financial_transactions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.financial_transactions_id_seq', 5, true);
 
 
 --
--- Name: meetings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: meetings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.meetings_id_seq', 1, true);
 
 
 --
--- Name: migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.migrations_id_seq', 17, true);
 
 
 --
--- Name: organization_profiles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: organization_profiles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.organization_profiles_id_seq', 1, true);
 
 
 --
--- Name: personal_access_tokens_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: personal_access_tokens_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.personal_access_tokens_id_seq', 1, false);
 
 
 --
--- Name: roles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: roles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.roles_id_seq', 4, true);
 
 
 --
--- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: karang_user
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.users_id_seq', 8, true);
 
 
 --
--- Name: activity_plans activity_plans_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: activity_plans activity_plans_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.activity_plans
@@ -1018,7 +960,7 @@ ALTER TABLE ONLY public.activity_plans
 
 
 --
--- Name: activity_realizations activity_realizations_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: activity_realizations activity_realizations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.activity_realizations
@@ -1026,7 +968,7 @@ ALTER TABLE ONLY public.activity_realizations
 
 
 --
--- Name: categories categories_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: categories categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.categories
@@ -1034,7 +976,7 @@ ALTER TABLE ONLY public.categories
 
 
 --
--- Name: categories categories_slug_unique; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: categories categories_slug_unique; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.categories
@@ -1042,7 +984,7 @@ ALTER TABLE ONLY public.categories
 
 
 --
--- Name: contents contents_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: contents contents_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.contents
@@ -1050,7 +992,7 @@ ALTER TABLE ONLY public.contents
 
 
 --
--- Name: contents contents_slug_unique; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: contents contents_slug_unique; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.contents
@@ -1058,7 +1000,7 @@ ALTER TABLE ONLY public.contents
 
 
 --
--- Name: documentation_library documentation_library_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: documentation_library documentation_library_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.documentation_library
@@ -1066,7 +1008,7 @@ ALTER TABLE ONLY public.documentation_library
 
 
 --
--- Name: documents documents_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: documents documents_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.documents
@@ -1074,7 +1016,7 @@ ALTER TABLE ONLY public.documents
 
 
 --
--- Name: failed_jobs failed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: failed_jobs failed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.failed_jobs
@@ -1082,7 +1024,7 @@ ALTER TABLE ONLY public.failed_jobs
 
 
 --
--- Name: failed_jobs failed_jobs_uuid_unique; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: failed_jobs failed_jobs_uuid_unique; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.failed_jobs
@@ -1090,7 +1032,7 @@ ALTER TABLE ONLY public.failed_jobs
 
 
 --
--- Name: financial_transactions financial_transactions_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: financial_transactions financial_transactions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.financial_transactions
@@ -1098,7 +1040,7 @@ ALTER TABLE ONLY public.financial_transactions
 
 
 --
--- Name: meetings meetings_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: meetings meetings_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.meetings
@@ -1106,7 +1048,7 @@ ALTER TABLE ONLY public.meetings
 
 
 --
--- Name: migrations migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: migrations migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.migrations
@@ -1114,7 +1056,7 @@ ALTER TABLE ONLY public.migrations
 
 
 --
--- Name: organization_profiles organization_profiles_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: organization_profiles organization_profiles_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.organization_profiles
@@ -1122,7 +1064,7 @@ ALTER TABLE ONLY public.organization_profiles
 
 
 --
--- Name: personal_access_tokens personal_access_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: personal_access_tokens personal_access_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.personal_access_tokens
@@ -1130,7 +1072,7 @@ ALTER TABLE ONLY public.personal_access_tokens
 
 
 --
--- Name: personal_access_tokens personal_access_tokens_token_unique; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: personal_access_tokens personal_access_tokens_token_unique; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.personal_access_tokens
@@ -1138,7 +1080,7 @@ ALTER TABLE ONLY public.personal_access_tokens
 
 
 --
--- Name: roles roles_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: roles roles_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.roles
@@ -1146,7 +1088,7 @@ ALTER TABLE ONLY public.roles
 
 
 --
--- Name: roles roles_slug_unique; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: roles roles_slug_unique; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.roles
@@ -1154,7 +1096,7 @@ ALTER TABLE ONLY public.roles
 
 
 --
--- Name: users users_email_unique; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: users users_email_unique; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.users
@@ -1162,7 +1104,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.users
@@ -1170,35 +1112,35 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: documents_created_at_index; Type: INDEX; Schema: public; Owner: karang_user
+-- Name: documents_created_at_index; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX documents_created_at_index ON public.documents USING btree (created_at);
 
 
 --
--- Name: documents_user_id_index; Type: INDEX; Schema: public; Owner: karang_user
+-- Name: documents_user_id_index; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX documents_user_id_index ON public.documents USING btree (user_id);
 
 
 --
--- Name: password_resets_email_index; Type: INDEX; Schema: public; Owner: karang_user
+-- Name: password_resets_email_index; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX password_resets_email_index ON public.password_resets USING btree (email);
 
 
 --
--- Name: personal_access_tokens_tokenable_type_tokenable_id_index; Type: INDEX; Schema: public; Owner: karang_user
+-- Name: personal_access_tokens_tokenable_type_tokenable_id_index; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX personal_access_tokens_tokenable_type_tokenable_id_index ON public.personal_access_tokens USING btree (tokenable_type, tokenable_id);
 
 
 --
--- Name: activity_plans activity_plans_approved_by_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: activity_plans activity_plans_approved_by_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.activity_plans
@@ -1206,7 +1148,7 @@ ALTER TABLE ONLY public.activity_plans
 
 
 --
--- Name: activity_plans activity_plans_category_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: activity_plans activity_plans_category_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.activity_plans
@@ -1214,7 +1156,7 @@ ALTER TABLE ONLY public.activity_plans
 
 
 --
--- Name: activity_plans activity_plans_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: activity_plans activity_plans_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.activity_plans
@@ -1222,7 +1164,7 @@ ALTER TABLE ONLY public.activity_plans
 
 
 --
--- Name: activity_realizations activity_realizations_activity_plan_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: activity_realizations activity_realizations_activity_plan_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.activity_realizations
@@ -1230,7 +1172,7 @@ ALTER TABLE ONLY public.activity_realizations
 
 
 --
--- Name: activity_realizations activity_realizations_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: activity_realizations activity_realizations_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.activity_realizations
@@ -1238,7 +1180,7 @@ ALTER TABLE ONLY public.activity_realizations
 
 
 --
--- Name: activity_realizations activity_realizations_verified_by_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: activity_realizations activity_realizations_verified_by_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.activity_realizations
@@ -1246,7 +1188,7 @@ ALTER TABLE ONLY public.activity_realizations
 
 
 --
--- Name: contents contents_category_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: contents contents_category_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.contents
@@ -1254,7 +1196,7 @@ ALTER TABLE ONLY public.contents
 
 
 --
--- Name: contents contents_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: contents contents_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.contents
@@ -1262,7 +1204,7 @@ ALTER TABLE ONLY public.contents
 
 
 --
--- Name: documentation_library documentation_library_activity_realization_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: documentation_library documentation_library_activity_realization_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.documentation_library
@@ -1270,7 +1212,7 @@ ALTER TABLE ONLY public.documentation_library
 
 
 --
--- Name: documentation_library documentation_library_category_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: documentation_library documentation_library_category_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.documentation_library
@@ -1278,7 +1220,7 @@ ALTER TABLE ONLY public.documentation_library
 
 
 --
--- Name: documentation_library documentation_library_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: documentation_library documentation_library_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.documentation_library
@@ -1286,7 +1228,7 @@ ALTER TABLE ONLY public.documentation_library
 
 
 --
--- Name: documents documents_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: documents documents_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.documents
@@ -1294,7 +1236,7 @@ ALTER TABLE ONLY public.documents
 
 
 --
--- Name: financial_transactions financial_transactions_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: financial_transactions financial_transactions_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.financial_transactions
@@ -1302,7 +1244,7 @@ ALTER TABLE ONLY public.financial_transactions
 
 
 --
--- Name: meetings meetings_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: meetings meetings_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.meetings
@@ -1310,7 +1252,7 @@ ALTER TABLE ONLY public.meetings
 
 
 --
--- Name: users users_role_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: karang_user
+-- Name: users users_role_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.users
@@ -1318,22 +1260,8 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: SCHEMA public; Type: ACL; Schema: -; Owner: pg_database_owner
---
-
-GRANT ALL ON SCHEMA public TO karang_user;
-
-
---
--- Name: DEFAULT PRIVILEGES FOR TABLES; Type: DEFAULT ACL; Schema: public; Owner: postgres
---
-
-ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA public GRANT ALL ON TABLES TO karang_user;
-
-
---
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 00ToPEGftxqKbdO8wbpZjlmNqhEPkZAtIKGSuUd8Ui4dNboOXffNDkKUhdVRTAz
+\unrestrict cP9Cg078kymPc1SUprsrJEbQtXbwLLA4IRG62yZ0juYiMiGQP56cvMXz9JJu7aG
 
