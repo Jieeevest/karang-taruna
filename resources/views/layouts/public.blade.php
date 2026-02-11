@@ -43,6 +43,9 @@
                             <a href="{{ url('/documentation') }}" class="inline-flex items-center px-1 pt-1 border-b-2 {{ request()->is('documentation*') ? 'border-primary text-black' : 'border-transparent text-black hover:text-primary hover:border-primary' }} text-sm font-medium">
                                 Dokumentasi
                             </a>
+                            <a href="{{ route('competition.register') }}" class="inline-flex items-center px-1 pt-1 border-b-2 {{ request()->routeIs('competition.register') ? 'border-primary text-black' : 'border-transparent text-black hover:text-primary hover:border-primary' }} text-sm font-medium">
+                                Pendaftaran Lomba
+                            </a>
                         </div>
                     </div>
                     <div class="flex items-center">
@@ -80,6 +83,7 @@
                             <li><a href="{{ url('/about') }}" class="text-white hover:text-primary">Tentang</a></li>
                             <li><a href="{{ url('/activities') }}" class="text-white hover:text-primary">Kegiatan</a></li>
                             <li><a href="{{ url('/news') }}" class="text-white hover:text-primary">Berita</a></li>
+                            <li><a href="{{ route('competition.register') }}" class="text-white hover:text-primary">Pendaftaran Lomba</a></li>
                         </ul>
                     </div>
                     <div>

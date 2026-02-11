@@ -26,6 +26,10 @@ Route::get('/news/{slug}', [PublicController::class, 'newsDetail'])->name('news.
 // Documentation
 Route::get('/documentation', [PublicController::class, 'documentation'])->name('documentation');
 
+// Competition Registration
+Route::get('/pendaftaran-ramadan-2026', [\App\Http\Controllers\Frontend\CompetitionRegistrationController::class, 'create'])->name('competition.register');
+Route::post('/pendaftaran-ramadan-2026', [\App\Http\Controllers\Frontend\CompetitionRegistrationController::class, 'store'])->name('competition.register.store');
+
 // CMS Routes - Protected by auth and role middleware
 Route::prefix('cms')->name('cms.')->middleware(['auth'])->group(function () {
     
