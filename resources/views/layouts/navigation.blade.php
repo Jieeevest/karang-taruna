@@ -15,6 +15,12 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    @if(Auth::user()->hasRole('ketua') || Auth::user()->hasRole('admin-data') || Auth::user()->hasRole('anggota'))
+                    <x-nav-link :href="route('cms.competition-registrations.index')" :active="request()->routeIs('cms.competition-registrations.*')">
+                        {{ __('Pendaftaran Lomba') }}
+                    </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -66,6 +72,12 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            @if(Auth::user()->hasRole('ketua') || Auth::user()->hasRole('admin-data') || Auth::user()->hasRole('anggota'))
+            <x-responsive-nav-link :href="route('cms.competition-registrations.index')" :active="request()->routeIs('cms.competition-registrations.*')">
+                {{ __('Pendaftaran Lomba') }}
+            </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->
@@ -86,6 +98,7 @@
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>
+
             </div>
         </div>
     </div>

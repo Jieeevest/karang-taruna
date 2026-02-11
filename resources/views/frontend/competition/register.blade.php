@@ -148,7 +148,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('competition.register.store') }}" method="POST" class="space-y-6">
+                <form action="{{ route('competition.register.store') }}" method="POST" class="space-y-6" enctype="multipart/form-data">
                     @csrf
 
                     <div class="grid md:grid-cols-2 gap-6">
@@ -248,6 +248,16 @@
                                     <option value="COD" {{ old('payment_method') == 'COD' ? 'selected' : '' }}>COD (Bayar Tunai)</option>
                                 </select>
                             </div>
+                        </div>
+
+                        {{-- Payment Proof --}}
+                        <div class="md:col-span-2">
+                            <label for="payment_proof" class="block text-sm font-semibold text-gray-700 mb-2">Bukti Pembayaran</label>
+                            <input type="file" name="payment_proof" id="payment_proof" 
+                                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition bg-white"
+                                style="font-family: 'Plus Jakarta Sans', sans-serif;"
+                                accept="image/*">
+                            <p class="mt-1 text-sm text-gray-500">Format: JPG, PNG, JPEG. Maksimal 2MB. (Opsional jika COD)</p>
                         </div>
                     </div>
 

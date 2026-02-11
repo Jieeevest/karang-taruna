@@ -22,7 +22,13 @@ class CompetitionRegistrationController extends Controller
             'domicile_rt' => 'required|string',
             'competition_type' => 'required|string',
             'payment_method' => 'required|string',
+            'payment_proof' => 'nullable|image|max:2048',
         ]);
+
+        if ($request->hasFile('payment_proof')) {
+            $path = $request->file('payment_proof')->store('payment_proofs', 'public');
+            $validated['payment_proof'] = $path;
+        }
 
         \App\Models\CompetitionRegistration::create($validated);
 

@@ -17,5 +17,6 @@ class CompetitionRegistration extends Model
         'domicile_rt',
         'competition_type',
         'payment_method',
+        'payment_proof',
     ];
 }

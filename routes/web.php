@@ -99,6 +99,12 @@ Route::prefix('cms')->name('cms.')->middleware(['auth'])->group(function () {
             ->name('documents.download');
         Route::resource('documents', \App\Http\Controllers\CMS\DocumentController::class);
     });
+
+    // Competition Registrations - All roles
+    Route::middleware('role:ketua,admin-data,anggota')->group(function () {
+        Route::resource('competition-registrations', \App\Http\Controllers\CMS\CompetitionRegistrationController::class)
+            ->only(['index', 'show', 'destroy']);
+    });
 });
 
 // Authentication Routes (Laravel Breeze)
